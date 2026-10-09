@@ -95,6 +95,19 @@ public class IsometricPlayer : MonoBehaviour
             desiredFacing = moveDirection.normalized;
         }
 
+        // While right-click is held, forward sprinting takes priority.
+        // Positive dot product means movement toward the cursor-facing direction.
+        bool forwardSprint = aiming
+            && wantsRun
+            && moving
+            && Vector3.Dot(moveDirection.normalized, desiredFacing) > 0.1f;
+
+        if (forwardSprint)
+        {
+            aiming = false;
+            desiredFacing = moveDirection.normalized;
+        }
+
         // Rotates the unanimated Player root
         if (aiming || moving)
         {
@@ -136,6 +149,21 @@ public class IsometricPlayer : MonoBehaviour
 
         if (animator != null)
         {
+            int aimLayer = animator.GetLayerIndex("UpperBodyAim");
+
+            if (aimLayer > 0)
+            {
+                float targetWeight = aiming ? 1f : 0f;
+
+                float weight = Mathf.MoveTowards(
+                    animator.GetLayerWeight(aimLayer),
+                    targetWeight,
+                    8f * Time.deltaTime
+                );
+
+                animator.SetLayerWeight(aimLayer, weight);
+            }
+
             Vector3 actualVelocity = controller.velocity;
             actualVelocity.y = 0f;
 
