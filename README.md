@@ -1,4 +1,4 @@
-# Isometric Character Prototype
+# 3D Isometric Player Controller Prototype
 
 A Unity 3D Project prototype with Isometric camera view and player controller with a simple 3D Character model.
 The player moves relative to a fixed isometric camera, turns toward movement,
@@ -39,7 +39,7 @@ and faces the cursor while the right mouse button is held.
   Idle at 0, in-place Walk at 2, and in-place Run at 4.
 - Main Camera has `IsometricCamera` with Target assigned to the Player root.
 - Start with camera Orthographic Size 7, Min Zoom 3, Max Zoom 12,
-  Zoom Sensitivity 0.01, and Zoom Smooth Time 0.15.
+  Zoom Sensitivity 1, and Zoom Smooth Time 0.15.
 
 The camera retains a fixed angle and zooms around the player. Scroll sensitivity
 may need adjustment for different mice and trackpads.
