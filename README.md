@@ -10,16 +10,20 @@ and faces the cursor while the right mouse button is held.
 - Right-click cursor aiming.
 - Shift to run; backward movement while aiming is limited to walking.
 - Idle, walk, and run animation blending.
-- Orthographic camera follow with smooth, bounded mouse-wheel zoom.
+- Isometric camera follow with smooth, bounded mouse-wheel zoom.
+- Day & Night cycle with ambience.
+- Flashlight view during night cycle.
+- Footstep sounds based on distance and walk/run.
 
 ## Controls
 
 | Input | Action |
 | --- | --- |
 | WASD | Move |
-| Hold Shift | Run, except backward while aiming |
+| Hold Shift | Run |
 | Hold right mouse button | Face the cursor |
 | Scroll up / down | Zoom in / out |
+| F | Toggle flashlight (Night time only) |
 
 ## Screenshot showcase
 
@@ -35,28 +39,7 @@ and faces the cursor while the right mouse button is held.
    set to Input System Package (New) or Both.
 3. Open the prototype scene, press Play, and click inside the Game view.
 
-## Scene setup
-
-- The `Player` root has a Character Controller and `IsometricPlayer` script.
-- The character model is a child of Player, with an Animator and root motion off.
-- The model faces the Player's local positive Z direction; apply any facing
-  correction to the model child.
-- The Animator uses a 1D Blend Tree driven by the float parameter `Speed`:
-  Idle at 0, in-place Walk at 2, and in-place Run at 4.
-- Main Camera has `IsometricCamera` with Target assigned to the Player root.
-- Start with camera Orthographic Size 7, Min Zoom 3, Max Zoom 12,
-  Zoom Sensitivity 1, and Zoom Smooth Time 0.15.
-
-The camera retains a fixed angle and zooms around the player. Scroll sensitivity
-may need adjustment for different mice and trackpads.
-
-## Current limitations
-
-Forward walk/run clips are reused for locomotion. Dedicated backward and strafe
-animations are needed for accurate directional animation while aiming.
-Cursor aiming uses a horizontal plane at the player's feet.
-
-## Character credit
+## Credits
 
 Character: Casual Male by manoeldarochadeoliveira on CGTrader.
 Third-party character assets retain their own license; this README does not
