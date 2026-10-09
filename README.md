@@ -21,6 +21,12 @@ and faces the cursor while the right mouse button is held.
 | Hold right mouse button | Face the cursor |
 | Scroll up / down | Zoom in / out |
 
+## Screenshot showcase
+
+![Showcase_1](Assets/docs/showcase_1.png)
+![Showcase_2](Assets/docs/showcase_2.png)
+![Showcase_3](Assets/docs/showcase_3.png)
+
 ## Getting started
 
 1. Open the Unity project through Unity Hub using the version recorded in
