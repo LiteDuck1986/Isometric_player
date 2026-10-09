@@ -1,0 +1,44 @@
+# Unity caches and generated output
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Mm]emoryCaptures/
+/[Rr]ecordings/
+.utmp/
+
+# IDE-generated files and local settings
+.vs/
+.idea/
+*.csproj
+*.unityproj
+*.sln
+*.slnx
+*.suo
+*.user
+*.userprefs
+*.DotSettings.user
+*.pidb
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Logs, temporary files, and OS clutter
+*.log
+*.tmp
+sysinfo.txt
+mono_crash.*
+.DS_Store
+Thumbs.db
+
+# Blender backups
+*.blend1
+*.blend1.meta
+*.blend2
+*.blend2.meta
+
+# Keep Assets/, Packages/, ProjectSettings/, and asset .meta files tracked.
